@@ -1,0 +1,13 @@
+{
+  "item.blockastra.original_resin": "原粹树脂",
+
+  "blockastra.configuration.resinStorageLimit": "原粹树脂存储上限",
+  "blockastra.configuration.resinRegeneratesLimit": "原粹树脂恢复上限",
+  "blockastra.configuration.resinRegeneratesSpeed": "原粹树脂恢复速度",
+  "blockastra.configuration.fragileResinRestoreAmount": "脆弱树脂补充量",
+
+  "original.blockastra.next_replenished_time": "下次恢复",
+  "original.blockastra.fully_replenished_time": "全部恢复",
+  "original.blockastra.stop_replenished": "只有一个原粹树脂可以恢复",
+  "original.blockastra.fully_replenished": "原粹树脂已完全恢复"
+}

@@ -1,0 +1,13 @@
+{
+  "item.blockastra.original_resin": "Original Resin",
+
+  "blockastra.configuration.resinStorageLimit": "Original Resin storage amount",
+  "blockastra.configuration.resinRegeneratesLimit": "Original Resin regenerates limit",
+  "blockastra.configuration.resinRegeneratesSpeed": "Original Resin regenerates speed",
+  "blockastra.configuration.fragileResinRestoreAmount": "Fragile Resin restore amount",
+
+  "original.blockastra.next_replenished_time": "Replenished in",
+  "original.blockastra.fully_replenished_time": "Fully replenished",
+  "original.blockastra.stop_replenished": "Only one original resin can replenish",
+  "original.blockastra.fully_replenished": "Original resin is fully replenished"
+}
