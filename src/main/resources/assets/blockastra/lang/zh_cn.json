@@ -1,5 +1,8 @@
 {
   "item.blockastra.original_resin": "原粹树脂",
+  "item.blockastra.fragile_resin": "脆弱树脂",
+
+  "creativetab.blockastra.tab": "方星奇遇",
 
   "blockastra.configuration.resinStorageLimit": "原粹树脂存储上限",
   "blockastra.configuration.resinRegeneratesLimit": "原粹树脂恢复上限",

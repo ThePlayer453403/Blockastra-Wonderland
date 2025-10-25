@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +17,9 @@ import java.util.UUID;
 
 public class OriginalResin extends Item {
     HashMap<UUID, Long> PlayerRegenerated = new HashMap<>();
-    public OriginalResin(Properties properties) {super(properties);}
+    public OriginalResin() {
+        super(new Item.Properties().rarity(Rarity.COMMON).durability(1024).setNoRepair());
+    }
 
     @Override
     public void inventoryTick(@NotNull ItemStack stack, Level level, @NotNull Entity entity, int slotId, boolean isSelected) {
@@ -24,10 +27,14 @@ public class OriginalResin extends Item {
             super.inventoryTick(stack, level, entity, slotId, isSelected);
             return;
         }
+        if (!stack.has(ModComponents.RESIN_AMOUNT) || !stack.has(ModComponents.RESIN_TIMER)) {
+            stack.set(ModComponents.RESIN_TIMER, Config.RESIN_REGENERATES_SPEED.getAsInt());
+            stack.set(ModComponents.RESIN_AMOUNT, 0);
+        }
 
         long tick = level.getGameTime();
-
         int resin_amount = stack.getOrDefault(ModComponents.RESIN_AMOUNT, 0);
+
         stack.setDamageValue(1024 - 1024 * resin_amount / Config.RESIN_REGENERATES_LIMIT.getAsInt());
 
         if (tick % 20 == 0) { // 每秒执行一次

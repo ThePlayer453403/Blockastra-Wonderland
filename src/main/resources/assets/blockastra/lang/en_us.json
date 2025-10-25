@@ -1,5 +1,8 @@
 {
   "item.blockastra.original_resin": "Original Resin",
+  "item.blockastra.fragile_resin": "Fragile Resin",
+
+  "creativetab.blockastra.tab": "Blockastra Wonderland",
 
   "blockastra.configuration.resinStorageLimit": "Original Resin storage amount",
   "blockastra.configuration.resinRegeneratesLimit": "Original Resin regenerates limit",

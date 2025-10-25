@@ -1,6 +1,7 @@
 package com.github.blockastra;
 
 import com.github.blockastra.component.ModComponents;
+import com.github.blockastra.item.ModCreativeModeTabs;
 import com.github.blockastra.item.ModItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -12,6 +13,7 @@ public class BlockastraWonderland {
     public static final String MOD_ID = "blockastra";
     public BlockastraWonderland(IEventBus modEventBus, ModContainer modContainer) {
         ModItems.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         ModComponents.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
