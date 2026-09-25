@@ -3,7 +3,8 @@
 	"package": "com.blockgi.blockastra.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"AddGlobalAttribute",
+      "ApplyCriticalHit"
 	],
 	"injectors": {
 		"defaultRequire": 1
