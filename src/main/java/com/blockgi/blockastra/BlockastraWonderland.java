@@ -1,6 +1,7 @@
 package com.blockgi.blockastra;
 
 import com.blockgi.blockastra.attributes.ModAttributes;
+import com.blockgi.blockastra.network.ModNetworkPayloads;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -16,6 +17,7 @@ public class BlockastraWonderland implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModAttributes.register();
+		ModNetworkPayloads.register();
 	}
 
 	public static Identifier id(String path) {
