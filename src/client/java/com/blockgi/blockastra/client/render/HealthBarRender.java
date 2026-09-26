@@ -87,7 +87,7 @@ public class HealthBarRender {
         poseStack.scale(-0.05f, -0.05f, -0.05f);
         float x = instance.width / -2f;
         // 被玄学玩意吓哭了
-        collector.submitTextBackground(poseStack, x, -8, -x, -6.2f, 0xff000000, Font.DisplayMode.NORMAL, 0xff3a222d);
+        collector.submitTextBackground(poseStack, x - 0.1f, -8.1f, 0.1f - x, -6.1f, 0xff3a222d, Font.DisplayMode.NORMAL, 0xffffff);
         poseStack.translate(0, 0, 0.001f);
         collector.submitTextBackground(poseStack, x, -8, instance.width * (instance.health_yellow / instance.health_max) + x, -6.2f, 0xffffd17e, Font.DisplayMode.NORMAL, 0xf000f0);
         poseStack.translate(0, 0, 0.001f);

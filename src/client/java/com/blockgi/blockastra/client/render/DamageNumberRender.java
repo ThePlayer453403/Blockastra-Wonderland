@@ -11,20 +11,22 @@ import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.FontDescription;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.phys.Vec3;
 
 
 public class DamageNumberRender {
+    private static long lastProcessTime = 0;
+
     public static void register() {
         LevelExtractionEvents.END_EXTRACTION.register(DamageNumberRender::extractDamageNumbers);
         LevelRenderEvents.COLLECT_SUBMITS.register(DamageNumberRender::renderDamageNumber);
     }
 
     public static void extractDamageNumbers(LevelExtractionContext context) {
-        DamageNumber.damageNumberInstances.removeIf(instance -> --instance.lifetime <= 0);
+        if (System.currentTimeMillis() - lastProcessTime >= 16) {
+            lastProcessTime = System.currentTimeMillis();
+            DamageNumber.damageNumberInstances.removeIf(instance -> --instance.lifetime <= 0);
+        }
     }
 
     public static void renderDamageNumber(LevelRenderContext context) {
