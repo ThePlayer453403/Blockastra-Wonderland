@@ -26,7 +26,7 @@ public class LivingEntityMixin {
         LivingEntity self = (LivingEntity)(Object) this;
         Vec3 position = self.position();
         Vec3 numberPosition = new Vec3(position.x + Math.random() - 0.5, position.y + Math.random() + 1, position.z + Math.random() - 0.5);
-        DamageNumberPayload payload = new DamageNumberPayload(numberPosition, (int) damage, 0xffffff);
+        DamageNumberPayload payload = new DamageNumberPayload(numberPosition, (int) Math.ceil(damage), 0xffffffff);
         PlayerLookup.around(level, position, 64).forEach(player -> ServerPlayNetworking.send(player, payload));
     }
 
