@@ -3,6 +3,7 @@ package com.blockgi.blockastra.client.render;
 import com.blockgi.blockastra.client.misc.DamageNumber;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.tp4.genshinlib.client.GILText;
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelExtractionContext;
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelExtractionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderContext;
@@ -46,7 +47,7 @@ public class DamageNumberRender {
         float scale = -Math.max(3f / (210 - instance.lifetime), 0.05f);
         poseStack.scale(scale, scale, scale);
         poseStack.translate(0, instance.lifetime * 0.05f, 0);
-        collector.submitText(poseStack, -instance.width / 2f, -client.font.lineHeight / 2f, Component.literal(instance.text).getVisualOrderText(), false, Font.DisplayMode.SEE_THROUGH, 0xF000F0, instance.color | Math.min(instance.lifetime * 3, 255) << 24,0,0);
+        collector.submitText(poseStack, -instance.width / 2f, -client.font.lineHeight / 2f, GILText.text(instance.text).getVisualOrderText(), false, Font.DisplayMode.SEE_THROUGH, 0xF000F0, instance.color | Math.min(instance.lifetime * 3, 255) << 24,0,0);
         poseStack.popPose();
     }
 
