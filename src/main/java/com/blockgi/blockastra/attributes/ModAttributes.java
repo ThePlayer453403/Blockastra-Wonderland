@@ -1,7 +1,6 @@
 package com.blockgi.blockastra.attributes;
 
 import com.blockgi.blockastra.BlockastraWonderland;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
