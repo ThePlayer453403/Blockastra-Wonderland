@@ -1,0 +1,53 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/pyro.png",
+      "chars": ["\u0001"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/hydro.png",
+      "chars": ["\u0002"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/dendro.png",
+      "chars": ["\u0003"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/electro.png",
+      "chars": ["\u0004"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/anemo.png",
+      "chars": ["\u0005"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/cryo.png",
+      "chars": ["\u0006"],
+      "height": 64,
+      "ascent": 32
+    },
+    {
+      "type": "bitmap",
+      "file": "blockastra:font/geo.png",
+      "chars": ["\u0007"],
+      "height": 64,
+      "ascent": 32
+    }
+  ]
+}

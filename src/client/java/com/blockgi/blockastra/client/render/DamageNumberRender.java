@@ -51,7 +51,7 @@ public class DamageNumberRender {
         float scale = -Math.max(3f / (210 - instance.lifetime) - 0.02f, 0.04f);
         poseStack.scale(scale, scale, scale);
         poseStack.translate(0, instance.lifetime * 0.05f, 0);
-        collector.submitText(poseStack, -instance.width / 2f, -client.font.lineHeight / 2f, GILText.text(instance.text).getVisualOrderText(), false, Font.DisplayMode.SEE_THROUGH, 0xF000F0, instance.color,0,0);
+        collector.submitText(poseStack, -instance.width / 2f, -client.font.lineHeight / 2f, GILText.text(instance.text).getVisualOrderText(), false, Font.DisplayMode.SEE_THROUGH, 0xf000f0, instance.color,0,0);
         poseStack.popPose();
     }
 

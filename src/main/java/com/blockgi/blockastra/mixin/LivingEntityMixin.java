@@ -1,6 +1,8 @@
 package com.blockgi.blockastra.mixin;
 
 import com.blockgi.blockastra.attributes.ModAttributes;
+import com.blockgi.blockastra.item.ElementalItem;
+import com.blockgi.blockastra.misc.ElementAura;
 import com.blockgi.blockastra.network.DamageNumberPayload;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -15,15 +17,21 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
     // 发生伤害数字数据包
     @Inject(method = "hurtServer", at = @At("RETURN"))
-    private void a(ServerLevel level, DamageSource source, float damage, CallbackInfoReturnable<Boolean> cir) {
+    private void sendDamageNumberPayload(ServerLevel level, DamageSource source, float damage, CallbackInfoReturnable<Boolean> cir) {
         if (!cir.getReturnValue()) {return;}
         LivingEntity self = (LivingEntity)(Object) this;
+
+        if (source.getWeaponItem() != null && source.getWeaponItem().getItem() instanceof ElementalItem elementalItem) {
+            elementalItem.applyElementOnDamage(level, self, source, damage);
+        }
+
         Vec3 position = self.position();
         Vec3 numberPosition = new Vec3(position.x + Math.random() - 0.5, position.y + Math.random() + 1, position.z + Math.random() - 0.5);
         DamageNumberPayload payload = new DamageNumberPayload(numberPosition, (int) Math.ceil(damage), 0xffffffff);
@@ -47,5 +55,11 @@ public class LivingEntityMixin {
         return original
                 .add(ModAttributes.CRIT_RATE)
                 .add(ModAttributes.CRIT_DAMAGE);
+    }
+
+    @Inject(method = "tick", at = @At("HEAD"))
+    private void tickElementAura(CallbackInfo ci) {
+        LivingEntity self = (LivingEntity)(Object) this;
+        ElementAura.tick(self);
     }
 }

@@ -42,8 +42,10 @@ dependencies {
 	implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 	implementation files("libs/GenshinLib-1.2.jar")
 
-//	runtimeOnly "curse.maven:modernUI-1698418:8956226"
-//	runtimeOnly "curse.maven:forgeConfigApi-547434:8938808"
+	runtimeOnly "curse.maven:modernUI-1698418:8987809"
+	runtimeOnly "curse.maven:forgeConfigApi-547434:8938808"
+
+	clientImplementation sourceSets.main.output
 }
 
 processResources {
