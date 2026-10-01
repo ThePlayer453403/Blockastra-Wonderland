@@ -21,7 +21,7 @@ public class ModItems {
         }
     }
 
-    public static final Item ELEMENT_WAND = register(ModItemIds.ELEMENT_WAND, ElementWand::new, new Item.Properties().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F));
+    public static final Item ELEMENT_WAND = register(ModItemIds.ELEMENT_WAND, ElementWand::new, new Item.Properties().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F).durability(7));
 
     public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
         Item item = itemFactory.apply(settings.setId(itemKey));
